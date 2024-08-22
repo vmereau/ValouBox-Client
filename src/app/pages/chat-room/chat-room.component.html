@@ -1,0 +1,8 @@
+<div>
+  @for (message of messages; track message.id) {
+    <ul> ( {{message.date | date:'HH:mm' }} ) {{(message.Sender | async)?.name}}: {{message.content}}</ul>
+  } @empty {
+    <li> Il n'y a pas encore de messages </li>
+  }
+</div>
+<input type="text"  [formControl]="newMessageForm" (keyup.enter)="sendMessage()">
