@@ -1,11 +1,10 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {User} from "../../../shared/models/user.interface";
-import {FormControl, FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {Store} from "@ngrx/store";
-import {selectUser} from "../../../state/User/user.selectors";
-import {UserActions, UserActionsEnum} from "../../../state/User/user.actions";
+import {FormControl, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {AppRoutesPath} from "../../../app.routes";
+import {UsersStore} from "../../../state/users/users.store";
+import {AuthStore} from "../../../state/auth/auth.store";
 
 @Component({
   selector: 'app-user-create',
@@ -18,18 +17,16 @@ import {AppRoutesPath} from "../../../app.routes";
   styleUrl: './user-create.component.scss'
 })
 export class UserCreateComponent {
-  public user$;
-  public newUserForm = new FormControl('');
+  readonly userStore = inject(UsersStore);
+  readonly authStore = inject(AuthStore);
+  public newUserForm = new FormControl('', [Validators.required]);
 
-  constructor(private store: Store, private router: Router) {
-    this.user$ = this.store.select(selectUser);
-  }
+  constructor(private router: Router) {}
 
   createUser() {
     const userName = this.newUserForm.value;
 
     if(!userName){
-      //TODO : error
       return;
     }
 
@@ -38,7 +35,9 @@ export class UserCreateComponent {
       id: 0
     }
 
-    this.store.dispatch(UserActions[UserActionsEnum.createUser]({user: newUser}));
+    this.userStore.addUser(newUser);
+    this.authStore.setUser(newUser);
+
     this.router.navigate([AppRoutesPath.chatRoom]).then();
   }
 }
