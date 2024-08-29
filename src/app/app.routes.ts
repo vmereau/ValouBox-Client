@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import {UserCreateComponent} from "./pages/user-create/user-create.component";
-import {ChatRoomComponent} from "./pages/chat-room/chat-room.component";
+import {UserCreateComponent} from "./pages/public/user-create/user-create.component";
+import {ChatRoomComponent} from "./pages/auth/chat-room/chat-room.component";
 import {authGuard} from "./shared/guards/auth.guard";
 
 export enum AppRoutesPath {

@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import {Message} from "../../shared/models/message.interface";
+import {Message} from "../../../shared/models/message.interface";
 import {FormControl, ReactiveFormsModule} from '@angular/forms';
 import {AsyncPipe, DatePipe} from "@angular/common";
 import {Store} from "@ngrx/store";
-import {selectUser} from "../../state/User/user.selectors";
+import {selectUser} from "../../../state/User/user.selectors";
 
 @Component({
   selector: 'app-chat-room',

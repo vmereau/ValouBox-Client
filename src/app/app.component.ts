@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {ChatRoomComponent} from "./pages/chat-room/chat-room.component";
-import {UserCreateComponent} from "./pages/user-create/user-create.component";
+import {ChatRoomComponent} from "./pages/auth/chat-room/chat-room.component";
+import {UserCreateComponent} from "./pages/public/user-create/user-create.component";
 
 @Component({
   selector: 'app-root',

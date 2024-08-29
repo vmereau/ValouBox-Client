@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import {User} from "../../shared/models/user.interface";
+import {User} from "../../../shared/models/user.interface";
 import {FormControl, FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {Store} from "@ngrx/store";
-import {selectUser} from "../../state/User/user.selectors";
-import {UserActions, UserActionsEnum} from "../../state/User/user.actions";
+import {selectUser} from "../../../state/User/user.selectors";
+import {UserActions, UserActionsEnum} from "../../../state/User/user.actions";
 import {Router} from "@angular/router";
-import {AppRoutesPath} from "../../app.routes";
+import {AppRoutesPath} from "../../../app.routes";
 
 @Component({
   selector: 'app-user-create',
