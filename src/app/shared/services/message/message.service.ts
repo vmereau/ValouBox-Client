@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {environment} from "../../../../environments/environment";
 import {HttpClient} from "@angular/common/http";
-import {User} from "../../models/user.interface";
 import {Observable} from "rxjs";
+import {Message, PostMessage} from "../../models/message.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class MessageService {
     private readonly http: HttpClient
   ) { }
 
-  public sendMessage(message: string, sender: User): Observable<Boolean> {
-    return this.http.post<Boolean>(this._baseUrl, {message, sender});
+  public sendMessage(message: PostMessage): Observable<Message> {
+    return this.http.post<Message>(this._baseUrl, {message});
   }
 }

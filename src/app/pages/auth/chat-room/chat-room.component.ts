@@ -1,5 +1,5 @@
 import {Component, inject} from '@angular/core';
-import {Message} from "../../../shared/models/message.interface";
+import {Message, PostMessage} from "../../../shared/models/message.interface";
 import {FormControl, ReactiveFormsModule} from '@angular/forms';
 import {AsyncPipe, DatePipe} from "@angular/common";
 import {Store} from "@ngrx/store";
@@ -39,11 +39,9 @@ export class ChatRoomComponent {
       return;
     }
 
-    let message: Message = {
+    let message: PostMessage = {
       content: this.newMessageForm.value || "",
       Sender: user,
-      id: this.fakeIndex,
-      date: new Date()
     }
 
     this.messageStore.addMessage(message);
