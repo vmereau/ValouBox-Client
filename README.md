@@ -1,6 +1,11 @@
 # ValouBoxClient
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.1.
+This is a side project that is a real time messaging web app using Angular.
+I did this project to discover how Angular's signals and RXJS SignalStore works.
+
+Features:
+ - Angular's Signal and Rxjs signalstore
+ - todo -> tailwind css ?
 
 ## Development server
 
