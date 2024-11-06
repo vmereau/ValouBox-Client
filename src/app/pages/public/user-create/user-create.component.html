@@ -1,8 +1,0 @@
-<div>
-  <label for="username">Username:</label>
-  <input type="text" id="username" [formControl]="newUserForm" (keyup.enter)="createUser()">
-  <button (click)="createUser()">Create User</button>
-</div>
-@if (newUserForm.getError('required') && newUserForm.dirty){
-  <p>Le nom d'utilisateur est obligatoire</p>
-}

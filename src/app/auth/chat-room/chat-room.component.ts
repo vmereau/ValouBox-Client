@@ -1,12 +1,12 @@
 import {Component, inject} from '@angular/core';
-import {Message, PostMessage} from "../../../shared/models/message.interface";
+import {Message, PostMessage} from "../../shared/models/message.interface";
 import {FormControl, ReactiveFormsModule} from '@angular/forms';
 import {AsyncPipe, DatePipe} from "@angular/common";
 import {Store} from "@ngrx/store";
-import {UsersStore} from "../../../state/users/users.store";
-import {AuthStore} from "../../../state/auth/auth.store";
+import {UsersStore} from "../../state/users/users.store";
+import {AuthStore} from "../../state/auth/auth.store";
 import {patchState} from "@ngrx/signals";
-import {MessagesStore} from "../../../state/messages/messages.store";
+import {MessagesStore} from "../../state/messages/messages.store";
 
 @Component({
   selector: 'app-chat-room',

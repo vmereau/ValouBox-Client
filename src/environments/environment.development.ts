@@ -1,8 +1,7 @@
 export const environment = {
-  production: true,
-  build: 'production',
+  production: false,
+  build: 'dev',
   api: {
-    //TODO set prod url
     baseUrl: 'http://localhost:3000',
   },
 };

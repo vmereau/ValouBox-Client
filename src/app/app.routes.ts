@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import {UserCreateComponent} from "./pages/public/user-create/user-create.component";
-import {ChatRoomComponent} from "./pages/auth/chat-room/chat-room.component";
+import {ChatRoomComponent} from "./auth/chat-room/chat-room.component";
 import {authGuard} from "./shared/guards/auth.guard";
+import {SignupComponent} from "./public/signup/signup.component";
 
 export enum AppRoutesPath {
   userCreate = "user-create",
@@ -11,7 +11,7 @@ export enum AppRoutesPath {
 export const routes: Routes = [
   {
     path: AppRoutesPath.userCreate,
-    component: UserCreateComponent
+    component: SignupComponent
   },
   {
     path: AppRoutesPath.chatRoom,
@@ -20,6 +20,6 @@ export const routes: Routes = [
   },
   {
     path: '',
-    component: UserCreateComponent
+    component: SignupComponent
   }
 ];

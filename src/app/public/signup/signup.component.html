@@ -1,0 +1,15 @@
+<div>
+  <form [formGroup]="signupForm" (ngSubmit)="onSignup()" (keyup.enter)="onSignup()">
+    <label for="username">Username:</label>
+    <input type="text" id="username" [formControlName]="'username'">
+
+    <label for="username">Password:</label>
+    <input type="text" id="password" [formControlName]="'password'">
+
+    <button type="submit" [disabled]="!signupForm.valid">Create User</button>
+  </form>
+</div>
+
+@if (signupForm.getError('required') && signupForm.dirty){
+  <p>Le nom d'utilisateur et le mot de passe sont obligatoires</p>
+}
